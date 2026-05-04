@@ -1,57 +1,97 @@
-# Sistema de Gestión de Libros Electronicos
-Este proyecto se centra en la creación de un sistema de gestión de libros electrónicos utilizando el lenguaje de programación Go. 
-Su principal objetivo es promover la venta de libros digitales, este repositorio contiene el código fuente del sistema.
- 
-Realizado por: Nora Calle, José Córdova, Omar Llano.
+# FindBook — Sistema de Gestión de Libros Electrónicos
 
-## FindBook
+Plataforma web desarrollada en **Go** para la gestión y venta de libros electrónicos. Permite a autores publicar y gestionar sus obras, y a clientes explorar y adquirir libros digitales. Proyecto académico grupal desarrollado en segundo semestre de Ingeniería en Sistemas.
 
-Pensamos en ofrecer grandes oportunidades para nuestros vendedores (autores).
-Ofreciéndoles una plataforma que les permita fácilmente publicar y gestionar sus libros.
+> **Estado:** Proyecto académico completado — base funcional implementada.
 
-![](https://github.com/norah30/-SISTEMA-DE-GESTION-DE-LIBROS-ELECTRONICOS/blob/9c47e1ad6529517457d6b450e9933859caf3acf4/imagenes/WhatsApp%20Image%202023-12-21%20at%2023.20.38.jpeg)
+---
 
-## Descripcion del proyecto 
-Este proyecto es un sistema realizado en Go que permite gestionar una base de datos de libros electrónicos. Se puede utilizar para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en los datos de los libros, clientes y proveedores.
+## Descripción general
 
-## Tecnologias Utilizadas 
-Base de datos MYSQL, 
-Lenguaje de programación Go, 
-GitHub,  
-Plantillas html,
-Gorilla/mux,
-Go-sql-driver/mysql.
+FindBook es un sistema que ofrece a vendedores (autores) una plataforma para publicar y gestionar sus libros electrónicos fácilmente. Implementa operaciones **CRUD** completas sobre tres entidades principales: libros, clientes y proveedores.
 
-## Diagrama de Funcionalidad del Software.
-![](https://github.com/norah30/-SISTEMA-DE-GESTION-DE-LIBROS-ELECTRONICOS/blob/fa5a073a844dc210e7e111113f791f4699324004/sistemas%20de%20venta%20de%20libros%20digitales.jpeg)
-## Diagrama de Arquitectura del Software.
-![](https://github.com/norah30/-SISTEMA-DE-GESTION-DE-LIBROS-ELECTRONICOS/blob/0fc2f0c244d579dc03cab7970aef38fca1897001/SIS%20(1).jpg)
-## Diagrama de Clases 
-![](https://github.com/norah30/-SISTEMA-DE-GESTION-DE-LIBROS-ELECTRONICOS/blob/45bcd85b046d5bbcfdbceb5c99a1a2840c25c5ac/Proyecto%20GOLAND%202.jpeg)
- ## Avance del sistema de gestion de libros electronicos 
-Definimos estructuras y métodos para manejar entidades como clientes, libros y proveedores. 
-Tambien utilizamos una base de datos SQL para almacenar y gestionar los datos.
-El código HTML proporciona las páginas de inicio y 404 para la interfaz de usuario. 
-Los paquetes base y bdsql se encargan de la conexión a la base de datos y las operaciones CRUD.
-El paquete servidor maneja las solicitudes HTTP a diferentes rutas.
-![](https://github.com/norah30/-SISTEMA-DE-GESTION-DE-LIBROS-ELECTRONICOS/blob/6c8716addc9e6aa5ef7da74a103272ea724016b0/Inicio_Sistema.png)
+---
 
-## Funcionalidades del Proyecto
-Gestión Libros: Permite a los usuarios crear, leer, actualizar y eliminar registros de libros en la base de datos. Esto significa que los usuarios pueden agregar nuevos libros, ver detalles de los libros existentes, modificar la información de los libros existentes y eliminar libros que ya no están en stock.
+## Funcionalidades
 
-Gestión Clientes: Similar a la gestión de libros, esta característica permite a los usuarios gestionar los datos de los clientes, incluye la posibilidad de agregar nuevos clientes, ver detalles de los clientes existentes, modificar la información de los clientes existentes y eliminar clientes que ya no son clientes.
+- **Gestión de Libros** — Crear, leer, actualizar y eliminar registros de libros
+- **Gestión de Clientes** — Administración completa de datos de clientes
+- **Gestión de Proveedores** — Control de datos de proveedores y autores
+- **Interfaz Web** — Plantillas HTML para interacción con el sistema
+- **Enrutamiento HTTP** — Manejo de rutas con `gorilla/mux`
+- **Conexión a base de datos** — Integración con MySQL usando `go-sql-driver/mysql`
 
-Gestión Proveedores: Permite a los proveedores gestionar los datos. 
+---
 
-Interfaz Web: La aplicación proporciona una interfaz web para interactuar con la base de datos. 
+## Tecnologías utilizadas
 
-Enrutamiento: Utiliza el paquete gorilla/mux para manejar las solicitudes HTTP y dirigirlas a las funciones correspondientes según la ruta y el método HTTP. Esto permite a la aplicación manejar múltiples rutas y métodos HTTP de manera eficiente.
+| Tecnología | Uso |
+|---|---|
+| Go (Golang) | Lenguaje principal del backend |
+| MySQL | Base de datos relacional |
+| gorilla/mux | Enrutador HTTP |
+| go-sql-driver/mysql | Driver de conexión a MySQL |
+| HTML | Plantillas de interfaz web |
+| GitHub | Control de versiones |
 
-Conexión a MYSQL:  El sistema se conecta a una base datos MySQL utilizando el controlador go-sql-driver/mysql. Esto significa que la aplicación puede almacenar y recuperar datos de la base de datos de manera eficiente.
+---
 
+## Estructura del proyecto
 
+```
+findbook-sistema-gestion-libros/
+├── codig_go/          # Código fuente Go (entidades, CRUD, servidor)
+├── imagenes/          # Recursos gráficos del proyecto
+├── mysq/              # Scripts SQL de la base de datos
+├── plantillas_html/   # Páginas HTML (inicio, 404, etc.)
+└── README.md
+```
 
+---
 
+## Arquitectura
 
+El sistema está organizado en paquetes:
 
+- **`base`** — Definición de estructuras y métodos para Clientes, Libros y Proveedores
+- **`bdsql`** — Conexión a la base de datos y operaciones CRUD
+- **`servidor`** — Manejo de solicitudes HTTP y enrutamiento de rutas
 
+---
+
+## Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/norah30/findbook-sistema-gestion-libros.git
+cd findbook-sistema-gestion-libros
+
+# Instalar dependencias
+go mod tidy
+
+# Configurar la base de datos
+# Importar el script SQL desde la carpeta mysq/
+
+# Ejecutar el servidor
+go run codig_go/main.go
+```
+
+---
+
+## Equipo
+
+Proyecto desarrollado en equipo:
+
+- Nora Calle
+- José Córdova
+- Omar Llano
+
+---
+
+## Aprendizajes
+
+Este proyecto permitió aplicar conceptos de:
+- Desarrollo backend con Go
+- Diseño de bases de datos relacionales con MySQL
+- Arquitectura en capas (modelo, datos, servidor)
+- Trabajo colaborativo con Git y GitHub
